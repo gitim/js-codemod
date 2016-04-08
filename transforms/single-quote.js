@@ -1,4 +1,4 @@
-const DOUBLE_QUOTED = /^\"(.*)\"$/;
+const DOUBLE_QUOTED = /^(\"|\')(.*)\1$/;
 
 module.exports = function (fileInfo, api) {
     const j = api.jscodeshift;
