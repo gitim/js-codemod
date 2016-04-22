@@ -26,7 +26,8 @@
     "jest-cli": "^0.9.1",
     "jscodeshift": "^0.3.8",
     "nuclide-format-js-base": "0.0.35",
-    "react-codemod": "https://github.com/reactjs/react-codemod.git"
+    "react-codemod": "https://github.com/reactjs/react-codemod.git",
+    "stable": "^0.1.5"
   },
   "jest": {
     "setupFiles": ["<rootDir>/node_modules/react-codemod/jest/env.js"],

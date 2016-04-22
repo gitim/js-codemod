@@ -15,3 +15,19 @@ var Neil, deGrasse, Tyson;
 for (var i = 0, j = 10; i < j; i++, j--) {
   console.log(i, j);
 }
+
+var state = this.state,
+  props = this.props,
+  activeTab = props.activeTab,
+  activePeriod = this._getActivePeriod(props),
+  experience = this.props.expValue,
+  leader = this.props.user.leader,
+  user = this.props.user.current,
+  isLeader = Boolean(leader && leader.id === user.id),
+  showLeader = Boolean(activeTab === 'tab1' && leader),
+  showExperience = Boolean(!isLeader || (activeTab !== 'tab1')),
+  daysToNextLevelEstimate = this.props.daysToNextLevel,
+  showNextLevelEsimate = !isNaN(daysToNextLevelEstimate) && daysToNextLevelEstimate <= 60,
+
+  percentile = this.props.user.currentUserPercentile,
+  showPercentile = !isNaN(percentile) && percentile >= 20;

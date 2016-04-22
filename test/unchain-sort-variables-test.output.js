@@ -22,3 +22,18 @@ var Tyson;
 for (var i = 0, j = 10; i < j; i++, j--) {
   console.log(i, j);
 }
+
+var state = this.state;
+var props = this.props;
+var activeTab = props.activeTab;
+var activePeriod = this._getActivePeriod(props);
+var experience = this.props.expValue;
+var leader = this.props.user.leader;
+var user = this.props.user.current;
+var isLeader = Boolean(leader && leader.id === user.id);
+var showLeader = Boolean(activeTab === 'tab1' && leader);
+var showExperience = Boolean(!isLeader || (activeTab !== 'tab1'));
+var daysToNextLevelEstimate = this.props.daysToNextLevel;
+var showNextLevelEsimate = !isNaN(daysToNextLevelEstimate) && daysToNextLevelEstimate <= 60;
+var percentile = this.props.user.currentUserPercentile;
+var showPercentile = !isNaN(percentile) && percentile >= 20;
